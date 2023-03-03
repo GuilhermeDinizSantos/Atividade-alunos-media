@@ -33,24 +33,24 @@ for (i = 0; i < 5; i++)
         trabalho = 1;
     }
     total = ((int.Parse(matriz[i, 3]) + int.Parse(matriz[i, 4]) + int.Parse(matriz[i, 5])) / 3) + trabalho;
-    presenca = (int.Parse(matriz[i, 2]) / int.Parse(matriz[i, 1])) * 100;
-    if (total >= 6 && presenca >= 25)
+    presenca = (double.Parse(matriz[i, 2]) / double.Parse(matriz[i, 1])) * 100;
+    if (total >= 6 && presenca <= 25)
     {
         resultado = "Aprovado";
     }
-    if (total <= 6 && presenca >= 25)
+    if (total < 6 && presenca <= 25)
     {
         resultado = "Reprovado por menção";
     }
-    if (total >= 6 && presenca < 25)
+    if (total >= 6 && presenca > 25)
     {
         resultado = "Reprovado por falta";
     }
-    if (total <= 6 && presenca < 25)
+    if (total < 6 && presenca > 25)
     {
         resultado = "Reprovado por menção e por Falta";
     }
     Console.Clear();
-            Console.WriteLine(matriz[i, 0] + ", Sua nota foi de:" + total + "\nSua cota de falta foi de" + presenca + "% \nEle foi: " + resultado + "\nPressione enter para continuar");
+            Console.WriteLine(matriz[i, 0] + ", Sua nota foi de:" + total + "\nSua cota de falta foi de " + presenca + "% \nEle foi: " + resultado + "\nPressione enter para continuar");
     Console.ReadLine();
 }
